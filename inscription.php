@@ -13,7 +13,7 @@
     <?php
     include 'includes/header.php';
     include 'includes/footer.php';
-    include 'includes/connect-ins.php'
+    include 'includes/connect-ins.php';
     ?>
 
     <div class="page">

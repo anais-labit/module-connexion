@@ -17,11 +17,11 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li> <a href="inscription.php">S'inscrire</a></li>
                 <li><a href="connexion.php">Se connecter</a></li>
-                <li><a href="#profil">Gérer mon profil</a></li>
-                <li><a href="#admin">Administrateur</a></li>
+                <li><a href="profil.php">Gérer mon profil</a></li>
+                <li><a href="admin.php">Administrateur</a></li>
             </ul>
         </nav>
     </header>
