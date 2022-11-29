@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
     <title>Inscription</title>
 </head>
 
@@ -13,7 +14,6 @@
     include 'includes/header.php';
     include 'includes/footer.php';
     include 'includes/connect-ins.php'
-
     ?>
 
     <div class="page">
@@ -25,7 +25,7 @@
                 <input type="text" name="login" placeholder="Login">
                 <input type="text" name="prenom" placeholder="Prénom">
                 <input type="text" name="nom" placeholder="Nom">
-                <input type="password" name="pwd" placeholder="Mot de passe en minuscule sans accents ni caractères spéciaux">
+                <input type="password" name="pwd" placeholder="Mot de passe">
                 <input type="password" name="pwd2" placeholder="Confirmation du mot de passe">
                 <input type="submit" value="Créer mon compte" />
             </form>
