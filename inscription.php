@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,17 +14,17 @@
 
 <body>
     <?php
-    include 'includes/header.php';
-    include 'includes/footer.php';
-    include 'includes/connect-ins.php';
+    include './includes/connect-ins.php';
+    include './includes/header.php';
     ?>
+
 
     <div class="page">
         <div class="form_container">
             <div class="banner">
                 <h1>S'inscrire</h1>
             </div>
-            <form action="inscription.php" method="post">
+            <form action="#" method="post">
                 <input type="text" name="login" placeholder="Login">
                 <input type="text" name="prenom" placeholder="Prénom">
                 <input type="text" name="nom" placeholder="Nom">
@@ -31,6 +34,10 @@
             </form>
         </div>
     </div>
+
+    <?php
+    include './includes/footer.php';
+    ?>
 </body>
 
 </html>

@@ -12,9 +12,6 @@
 <body>
 
     <header>
-        <div class="text">
-            <h1>Bienvenue !</h1>
-        </div>
         <nav>
             <ul>
                 <li><a href="index.php">Accueil</a></li>
