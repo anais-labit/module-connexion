@@ -37,8 +37,8 @@
             }
             if ($pwd === $pwd2) {
                 if ($conn->query($new_user) === TRUE) {
-                    echo "Félicitations ! Votre compte a été créé avec succès <br>" .
-                        "<h3><a href=connexion.php>Se connecter</a></h3>";
+                    echo "Félicitations ! Votre compte a été créé avec succès";
+                    header("refresh:2; url=connexion.php");
                 }
             } elseif ($users === 1) {
                 echo "Erreur lors de la création du compte: Login déjà utilisé ";

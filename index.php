@@ -18,7 +18,7 @@
         if (isset($_SESSION["login"])) {
             echo " <h1> Bienvenue " . ucwords($_SESSION['login']) . " !</h1>";
         } else {
-            echo "Bienvenue !";
+            echo "<h1> Bienvenue ! </h1>";
         }
         ?>
     </div>

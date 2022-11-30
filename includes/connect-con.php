@@ -22,7 +22,7 @@ if ($users === 1) {
         session_start();
         $_SESSION["login"] = $login;
         echo "Connexion réussie" . "<br>";
-        // header("Location: index.php");
+        header("refresh:2; url=index.php");
         if (empty($login)) {
             echo "Login vide";
         } elseif (empty($_POST["pwd"])) {
