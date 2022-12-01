@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // // attribution d'une valeur par défaut aux POST pour éviter les erreurs
 if (!isset($_POST["login"])) {
@@ -19,17 +20,17 @@ $users = mysqli_num_rows($catchUsers);
 if ($users === 1) {
     if (isset($login, $_POST["pwd"])) {
         echo "Félicitations ! Vous êtes bien connecté"  . "<br>";
-        session_start();
         $_SESSION["login"] = $login;
         echo "Connexion réussie" . "<br>";
-        header("refresh:2; url=index.php");
+        header("refresh:2; url=profil.php");
         if (empty($login)) {
             echo "Login vide";
         } elseif (empty($_POST["pwd"])) {
             echo "Mot de passe vide";
         } elseif ($login === "admin") {
-            include 'admin.php';
+            $_SESSION["login"] == $login;
             echo "Vous êtes connecté en tant qu'admin";
+            header("refresh:2; url=admin.php");
         }
     }
 } elseif ($users === 0) {
