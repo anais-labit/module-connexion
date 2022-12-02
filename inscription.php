@@ -24,7 +24,7 @@
             <div class="banner">
                 <h1>S'inscrire</h1>
             </div>
-            <form action="#" method="post">
+            <form action="inscription.php" method="post">
                 <input type="text" name="login" placeholder="Login">
                 <input type="text" name="prenom" placeholder="Prénom">
                 <input type="text" name="nom" placeholder="Nom">

@@ -22,7 +22,7 @@
             <div class="banner">
                 <h1>Se connecter</h1>
             </div>
-            <form action="#" method="post">
+            <form action="connexion.php" method="post">
                 <input type="text" name="login" placeholder="Login">
                 <input type="password" name="pwd" placeholder="Mot de passe">
                 <input type="submit" value="Se connecter" />

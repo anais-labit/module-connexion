@@ -11,12 +11,39 @@
  <body>
      <?php include './includes/header.php';
         session_start();
-        if (isset($_SESSION["login"])) {
-            echo " <h1> Bienvenue " . ucwords($_SESSION['login']) . " !</h1>";
+        if (($_SESSION["login"])=== "admin") {
+            echo " <h1> Salut " . ucwords($_SESSION['login']) . " !</h1>";
+            $conn = new mysqli('localhost', 'root', '', 'moduleconnexion');
+            $catchInfos = $conn->query("SELECT * FROM utilisateurs");
+            $displayInfos = $catchInfos->fetch_all();
+             ?>
+
+         <table border="1px" width="50%" align="center">
+             <thead>
+                 <th>ID</th>
+                 <th>LOGIN</th>
+                 <th>PRÉNOM</th>
+                 <th>NOM</th>
+                 <th>MOT DE PASSE</th>
+             </thead>
+             <tbody>
+                 <?php
+                    foreach ($displayInfos as $ligne) {
+                        echo "<tr>";
+                        foreach ($ligne as $value) {
+                            echo "<td>" . $value;
+                        }
+                        echo "</tr>";
+                    }
+                    ?>
+             </tbody>
+         </table>
+     <?php
         } else {
             header('Location: connexion.php');
         }
         ?>
+
 
      <a href="./includes/logout.php">Déconnexion</a>
      <?php include './includes/footer.php' ?>

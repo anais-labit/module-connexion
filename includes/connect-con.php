@@ -20,8 +20,10 @@ $users = mysqli_num_rows($catchUsers);
 if ($users === 1) {
     if (isset($login, $_POST["pwd"])) {
         echo "Félicitations ! Vous êtes bien connecté"  . "<br>";
+        $pwd = $_POST["pwd"];
         $_SESSION["login"] = $login;
-        echo "Connexion réussie" . "<br>";
+        $_SESSION["pwd"] = $pwd;
+        // echo "Connexion réussie" . "<br>";
         header("refresh:2; url=profil.php");
         if (empty($login)) {
             echo "Login vide";
@@ -34,5 +36,5 @@ if ($users === 1) {
         }
     }
 } elseif ($users === 0) {
-    echo "Ce login n'existe pas";
+    echo "Rentrez un login valide";
 }

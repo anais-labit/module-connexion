@@ -10,20 +10,35 @@
 
  <body>
      <?php include './includes/header.php';
-        include './includes/connect-ins.php';
-        session_start();
+        include './includes/connect-update.php';
+
         if (isset($_SESSION["login"])) {
-            echo " <h1> Bienvenue " . ucwords($_SESSION['login']) . " !</h1>";
+            echo " <h1> Salut " . ucwords($_SESSION['login']) . " !</h1>";
+
             // echo "Modifier vos informations";
             $login = $_SESSION['login'];
+            $pwd = $_SESSION['pwd'];
+
             $catchInfos = $conn->query("SELECT login, prenom, nom, password FROM utilisateurs WHERE login = '$login'");
             $displayInfos = $catchInfos->fetch_all();
-            foreach ($displayInfos as $ligne) {
-                foreach ($ligne as $value) {
+            if (isset($_POST['submit'])) {
+                $confpwd = ($_POST['confpwd']);
+                $newpwd2 = ($_POST['newpwd2']);
+                $newpwd = ($_POST['newpwd']);
+                $newlogin = ($_POST['login']);
+
+                if (($confpwd == $pwd) && ($newpwd == $newpwd2)) {
+                    $upInfo = $conn->query("UPDATE utilisateurs SET login ='$newlogin', password = '$newpwd' WHERE login='$login'");
+                    echo "Les modifications ont bien été prises en compte";
+                    $_SESSION['login'] = $newlogin;
+                    $_SESSION['pwd'] = $newpwd;
+                    header("Refresh:2");
+                } else {
+                    echo "Mots de passe invalides";
                 }
             }
         } else {
-            header('Location: connexion.php');
+            header('Location: inscription.php');
         }
         ?>
 
@@ -32,10 +47,11 @@
              <h3>Modifier vos informations</h3>
          </div>
          <form action="#" method="post">
-             <input type="text" name="login" placeholder=" Login : <?php echo $_SESSION['login'] ?>">
-             <input type="password" name="pwd" placeholder="Mot de passe : <?php echo $value ?>">
-             <input type="password" name="pwd2" placeholder="Confirmation mot de passe">
-             <input type="submit" value="Sauvegarder les changements" />
+             <input type="text" name="login" placeholder=" Login : <?= $_SESSION['login'] ?> ou nouveau ?">
+             <input type="password" name="confpwd" placeholder="Ancien mot de passe">
+             <input type="password" name="newpwd" placeholder="Nouveau mot de passe">
+             <input type="password" name="newpwd2" placeholder="Confirmation mot de passe">
+             <input type="submit" name="submit" value="Sauvegarder les changements" />
          </form>
 
          <a href="./includes/logout.php"> <br> Déconnexion</a>
