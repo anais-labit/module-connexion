@@ -36,5 +36,5 @@ if ($users === 1) {
         }
     }
 } elseif ($users === 0) {
-    echo "Rentrez un login valide";
+    echo "Rentrez votre login";
 }

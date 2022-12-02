@@ -13,8 +13,8 @@
 
 <body>
     <?php
+    include './includes/header.php';
     include './includes/connect-con.php';
-    include './includes/header.php'
     ?>
 
     <div class="page">

@@ -14,8 +14,9 @@
 
 <body>
     <?php
-    include './includes/connect-ins.php';
     include './includes/header.php';
+
+    include './includes/connect-ins.php';
     ?>
 
 

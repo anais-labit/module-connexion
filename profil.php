@@ -38,7 +38,7 @@
                 }
             }
         } else {
-            header('Location: inscription.php');
+            header('Location: connexion.php');
         }
         ?>
 
@@ -47,15 +47,17 @@
              <h3>Modifier vos informations</h3>
          </div>
          <form action="#" method="post">
-             <input type="text" name="login" placeholder=" Login : <?= $_SESSION['login'] ?> ou nouveau ?">
+             <input type="text" name="login" placeholder="Login : <?= $_SESSION['login'] ?> ou nouveau ?">
              <input type="password" name="confpwd" placeholder="Ancien mot de passe">
              <input type="password" name="newpwd" placeholder="Nouveau mot de passe">
              <input type="password" name="newpwd2" placeholder="Confirmation mot de passe">
              <input type="submit" name="submit" value="Sauvegarder les changements" />
          </form>
-
+     </div>
+     <div class="decon">
          <a href="./includes/logout.php"> <br> Déconnexion</a>
-         <?php include './includes/footer.php' ?>
+     </div>
+     <?php include './includes/footer.php' ?>
 
  </body>
 

@@ -4,3 +4,136 @@
   left: 50%;
   transform: translate(-50%, -50%);
 } */
+
+* {
+  font-family: "Roboto slab";
+}
+
+/* LE HEADER  */
+
+.navContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #639fab;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+
+li {
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 50px;
+}
+
+nav a:hover {
+  color: #e0b825;
+}
+
+/* LE FOOTER  */
+
+footer {
+  background-color: #639fab;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+footer,
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #e0b825;
+}
+
+/* PAGE INSCRIPTION, CONNEXION, PROFIL */
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  max-width: 60%;
+  padding: 40px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 40em;
+}
+
+input[type="text"],
+input[type="password"] {
+  background-color: white;
+  font-size: 15px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  resize: none;
+  color: black;
+}
+
+input[type="submit"] {
+  font-size: 15px;
+  padding: 12px 30px;
+  border-radius: 5px;
+  border: none;
+  outline: white;
+  background-color: white;
+  border-color: white;
+  cursor: pointer;
+  color: #747474;
+}
+
+input[type="submit"]:hover {
+  background-color: #e0b825;
+  color: white;
+}
+
+/* PAGE ADMIN */
+
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+table thead th {
+  color: #e0b825;
+  padding-bottom: 20px;
+  font-weight: 800;
+}
+
+/* DECONNEXION */
+
+.decon {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.decon a {
+  text-decoration: none;
+  color: #e0b825;
+  font-weight: 600;
+  padding: 20px;
+}
+
+.decon a:hover {
+  color: #639fab;
+}

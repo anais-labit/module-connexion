@@ -24,8 +24,11 @@
 
         ?>
     </div>
-
+    <div class="decon">
+        <a href="./includes/logout.php"> <br> Déconnexion</a>
+    </div>
     <?php include './includes/footer.php'; ?>
+
 </body>
 
 </html>

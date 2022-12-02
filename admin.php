@@ -11,14 +11,14 @@
  <body>
      <?php include './includes/header.php';
         session_start();
-        if (($_SESSION["login"])=== "admin") {
+        if (($_SESSION["login"]) === "admin") {
             echo " <h1> Salut " . ucwords($_SESSION['login']) . " !</h1>";
             $conn = new mysqli('localhost', 'root', '', 'moduleconnexion');
             $catchInfos = $conn->query("SELECT * FROM utilisateurs");
             $displayInfos = $catchInfos->fetch_all();
-             ?>
+        ?>
 
-         <table border="1px" width="50%" align="center">
+         <table width="50%" align="center">
              <thead>
                  <th>ID</th>
                  <th>LOGIN</th>
@@ -26,7 +26,7 @@
                  <th>NOM</th>
                  <th>MOT DE PASSE</th>
              </thead>
-             <tbody>
+             <tbody width="50%" align="center">
                  <?php
                     foreach ($displayInfos as $ligne) {
                         echo "<tr>";
@@ -45,7 +45,9 @@
         ?>
 
 
-     <a href="./includes/logout.php">Déconnexion</a>
+     <div class="decon">
+         <a href="./includes/logout.php"> <br> Déconnexion</a>
+     </div>
      <?php include './includes/footer.php' ?>
 
  </body>

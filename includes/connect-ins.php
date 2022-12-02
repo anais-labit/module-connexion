@@ -35,14 +35,14 @@
             } elseif (empty($pwd)) {
                 echo "Renseignez un Mot de passe";
             }
-            if ($pwd === $pwd2) {
+            if (($pwd === $pwd2) && ($pwd != NULL) && ($prenom != NULL) && ($nom != NULL) && ($pwd != NULL)) {
                 if ($conn->query($new_user) === TRUE) {
                     echo "Félicitations ! Votre compte a été créé avec succès";
                     header("refresh:2; url=connexion.php");
                 }
             } elseif ($users === 1) {
                 echo "Erreur lors de la création du compte: Login déjà utilisé ";
-            } else {
+            } elseif ($pwd !== $pwd2) {
                 echo "Erreur lors de la création du compte: mots de passe différents";
             }
         }
