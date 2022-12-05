@@ -15,16 +15,20 @@ $conn = new mysqli('localhost', 'root', '', 'moduleconnexion');
 // une requete pour parcourir les logins des utilisateurs et compter les éventuels doublons
 $catchUsers = $conn->query("SELECT * FROM utilisateurs WHERE login='$login';");
 $users = mysqli_num_rows($catchUsers);
+$userInfo = $catchUsers->fetch_all();
+// var_dump($userInfo);
+// var_dump ($userInfo[0][4]);
 
-// une requete pour valiser la connexion si le login n'existe déjà
-if ($users === 1) {
+
+// une requete pour valiser la connexion si le login existe déjà et que le mot de passe corresponde à celui en DB
+if (($users === 1) && ($_POST["pwd"] === $userInfo[0][4])) {
     if (isset($login, $_POST["pwd"])) {
         echo "Félicitations ! Vous êtes bien connecté"  . "<br>";
         $pwd = $_POST["pwd"];
         $_SESSION["login"] = $login;
         $_SESSION["pwd"] = $pwd;
         // echo "Connexion réussie" . "<br>";
-        header("refresh:2; url=profil.php");
+        // header("refresh:2; url=profil.php");
         if (empty($login)) {
             echo "Login vide";
         } elseif (empty($_POST["pwd"])) {
@@ -32,7 +36,7 @@ if ($users === 1) {
         } elseif ($login === "admin") {
             $_SESSION["login"] == $login;
             echo "Vous êtes connecté en tant qu'admin";
-            header("refresh:2; url=admin.php");
+            // header("refresh:2; url=admin.php");
         }
     }
 } elseif ($users === 0) {
