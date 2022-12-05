@@ -28,7 +28,7 @@ if (($users === 1) && ($_POST["pwd"] === $userInfo[0][4])) {
         $_SESSION["login"] = $login;
         $_SESSION["pwd"] = $pwd;
         // echo "Connexion réussie" . "<br>";
-        // header("refresh:2; url=profil.php");
+        header("refresh:2; url=profil.php");
         if (empty($login)) {
             echo "Login vide";
         } elseif (empty($_POST["pwd"])) {
@@ -36,7 +36,7 @@ if (($users === 1) && ($_POST["pwd"] === $userInfo[0][4])) {
         } elseif ($login === "admin") {
             $_SESSION["login"] == $login;
             echo "Vous êtes connecté en tant qu'admin";
-            // header("refresh:2; url=admin.php");
+            header("refresh:2; url=admin.php");
         }
     }
 } elseif ($users === 0) {
