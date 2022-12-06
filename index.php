@@ -15,7 +15,7 @@
 
      <?php include './includes/header.php' ?>
 
-     <div class="text">
+     <div class="accueil">
          <?php
             if (isset($_SESSION["login"])) {
                 echo " <h1> Bienvenue " . ucwords($_SESSION['login']) . " !</h1>";
