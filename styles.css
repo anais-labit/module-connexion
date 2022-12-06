@@ -58,6 +58,12 @@ footer a:hover {
   color: #e0b825;
 }
 
+/* PAGE ACCUEIL */
+.accueil h1 {
+	height: 100vh;
+}
+
+
 /* PAGE INSCRIPTION, CONNEXION, PROFIL */
 
 .form_container {
