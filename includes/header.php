@@ -1,3 +1,10 @@
+<?php
+include './includes/connect-con.php';
+if (!isset($_POST["login"])) {
+    $_POST["login"] = "";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,16 +20,27 @@
 <body>
 
     <header>
+
         <nav>
             <div class="navContainer">
                 <ul>
-                    <li><a href="index.php">Accueil</a></li>
-                    <li> <a href="inscription.php">S'inscrire</a></li>
-                    <li><a href="connexion.php">Se connecter</a></li>
-                    <li><a href="profil.php">Gérer mon profil</a></li>
-                    <li><a href="admin.php">Administrateur</a></li>
+                    <?php if ((isset($_SESSION['login'])) && ($_SESSION['login'] !== 'admin')) { ?>
+                        <li><a href="index.php">Accueil</a></li>
+                        <li><a href="profil.php">Gérer mon profil</a></li>
+                    <?php } elseif ((isset($_SESSION['login'])) && ($_SESSION['login'] === 'admin')) { ?>
+                        <li><a href="index.php">Accueil</a></li>
+                        <li><a href="admin.php">Administrateur</a></li>
+                        <li><a href="profil.php">Gérer mon profil</a></li>
+                    <?php } else { ?>
+                        <li><a href="index.php">Accueil</a></li>
+                        <li> <a href="inscription.php">S'inscrire</a></li>
+                        <li><a href="connexion.php">Se connecter</a></li>
+
+                    <?php } ?>
+
                 </ul>
             </div>
+
         </nav>
     </header>
 

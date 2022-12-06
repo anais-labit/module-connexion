@@ -1,9 +1,9 @@
 <?php
-session_start();
 
 // // attribution d'une valeur par défaut aux POST pour éviter les erreurs
 if (!isset($_POST["login"])) {
     $_POST["login"] = "";
+    // $_SESSION["login"] = "";
     //     $_POST["pwd"] = "";
 };
 
@@ -23,7 +23,6 @@ $userInfo = $catchUsers->fetch_all();
 // une requete pour valiser la connexion si le login existe déjà et que le mot de passe corresponde à celui en DB
 if (($users === 1) && ($_POST["pwd"] === $userInfo[0][4])) {
     if (isset($login, $_POST["pwd"])) {
-        echo "Félicitations ! Vous êtes bien connecté"  . "<br>";
         $pwd = $_POST["pwd"];
         $_SESSION["login"] = $login;
         $_SESSION["pwd"] = $pwd;
@@ -35,10 +34,7 @@ if (($users === 1) && ($_POST["pwd"] === $userInfo[0][4])) {
             echo "Mot de passe vide";
         } elseif ($login === "admin") {
             $_SESSION["login"] == $login;
-            echo "Vous êtes connecté en tant qu'admin";
             header("refresh:2; url=admin.php");
         }
     }
-} elseif ($users === 0) {
-    echo "Rentrez votre login";
 }

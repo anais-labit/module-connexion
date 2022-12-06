@@ -1,3 +1,6 @@
+ <?php
+    session_start();
+    ?>
  <!DOCTYPE html>
  <html lang="fr">
 
@@ -10,7 +13,6 @@
 
  <body>
      <?php include './includes/header.php';
-        session_start();
         if (($_SESSION["login"]) === "admin") {
             echo " <h1> Salut " . ucwords($_SESSION['login']) . " !</h1>";
             $conn = new mysqli('localhost', 'root', '', 'moduleconnexion');

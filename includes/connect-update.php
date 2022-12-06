@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // // attribution d'une valeur par défaut aux POST pour éviter les erreurs
 if (!isset($_POST["login"])) {

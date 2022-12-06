@@ -1,15 +1,18 @@
- <!DOCTYPE html>
- <html lang="fr">
+  <?php
+    session_start();
+    ?>
+  <!DOCTYPE html>
+  <html lang="fr">
 
- <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Gérer mon profil</title>
- </head>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Gérer mon profil</title>
+  </head>
 
- <body>
-     <?php include './includes/header.php';
+  <body>
+      <?php include './includes/header.php';
         include './includes/connect-update.php';
 
         if (isset($_SESSION["login"])) {
@@ -42,23 +45,23 @@
         }
         ?>
 
-     <div class="form_container">
-         <div class="banner">
-             <h3>Modifier vos informations</h3>
-         </div>
-         <form action="#" method="post">
-             <input type="text" name="login" placeholder="Login : <?= $_SESSION['login'] ?> ou nouveau ?">
-             <input type="password" name="confpwd" placeholder="Ancien mot de passe">
-             <input type="password" name="newpwd" placeholder="Nouveau mot de passe">
-             <input type="password" name="newpwd2" placeholder="Confirmation mot de passe">
-             <input type="submit" name="submit" value="Sauvegarder les changements" />
-         </form>
-     </div>
-     <div class="decon">
-         <a href="./includes/logout.php"> <br> Déconnexion</a>
-     </div>
-     <?php include './includes/footer.php' ?>
+      <div class="form_container">
+          <div class="banner">
+              <h3>Modifier vos informations</h3>
+          </div>
+          <form action="#" method="post">
+              <input type="text" name="login" placeholder="Login : <?= $_SESSION['login'] ?> ou nouveau ?">
+              <input type="password" name="confpwd" placeholder="Ancien mot de passe">
+              <input type="password" name="newpwd" placeholder="Nouveau mot de passe">
+              <input type="password" name="newpwd2" placeholder="Confirmation mot de passe">
+              <input type="submit" name="submit" value="Sauvegarder les changements" />
+          </form>
+      </div>
+      <div class="decon">
+          <a href="./includes/logout.php"> <br> Déconnexion</a>
+      </div>
+      <?php include './includes/footer.php' ?>
 
- </body>
+  </body>
 
- </html>
+  </html>
